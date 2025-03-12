@@ -25,7 +25,7 @@ describe('template spec', () => {
 
   })
 
-  it.only('Search for a product and add it to the cart', () => {
+  it('Search for a product and add it to the shopping list', () => {
     cy.visit('https://front.serverest.dev/login')
     cy.get('[data-testid="email"]').type('nttreal@gmail.com')
     cy.get('[data-testid="senha"]').type('pwd123')
