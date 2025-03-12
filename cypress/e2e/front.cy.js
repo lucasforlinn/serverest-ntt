@@ -7,8 +7,7 @@ describe('template spec', () => {
     cy.get('.alert').should('have.text', '×Email e/ou senha inválidos')
   })
 
-  it.only('Create a new user', () => {
-
+  it('Create a new user', () => {
     cy.request('GET', 'https://serverest.dev/usuarios?email=ntttdddeste@gmail.com').then((response) => {
       if (response.body.quantidade > 0) {
         cy.request('DELETE', `https://serverest.dev/usuarios/${response.body.usuarios[0]._id}`)
@@ -26,8 +25,17 @@ describe('template spec', () => {
 
   })
 
-  it('Search for a product and add it to the cart', () => {
+  it.only('Search for a product and add it to the cart', () => {
+    cy.visit('https://front.serverest.dev/login')
+    cy.get('[data-testid="email"]').type('nttreal@gmail.com')
+    cy.get('[data-testid="senha"]').type('pwd123')
+    cy.get('[data-testid="entrar"]').click()
 
+    cy.get('[data-testid="pesquisar"]').type('logitech')
+    cy.get('[data-testid="botaoPesquisar"]').click()
+    cy.get('[data-testid="adicionarNaLista"]').first().click()
+
+    cy.get('[data-testid="shopping-cart-product-name"]').should('contain.text', 'Logitech')
   })
 
 
