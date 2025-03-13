@@ -26,23 +26,31 @@ describe('API Testing', () => {
             "quantidade": 381
         }
 
-        cy.getToken(user).then(response => {
+        cy.login(user).then(response => {
             cy.request({
                 method: 'POST',
                 url: 'https://serverest.dev/produtos',
                 headers: {
-                    'authorization': response
+                    'authorization': response.body.authorization
                 },
                 body: product
             }).then((product) => {
                 expect(product.status).to.eq(201)
                 expect(product.body.message).to.eq('Cadastro realizado com sucesso')
-                cy.deleteProduct(product.body._id, response)
+                cy.deleteProduct(product.body._id, response.body.authorization)
             })
         })
     })
 
-    it('Search for a product and add it to the shopping list', () => {
+    it('Unsuccessful login', () => {
+        const user = {
+            "email": "batatinha@gmail.com",
+            "password": "222111",
+        }
 
+        cy.login(user).then(response => {
+            expect(response.status).to.eq(401)
+            expect(response.body.message).to.eq('Email e/ou senha inválidos')
+        })
     })
 })

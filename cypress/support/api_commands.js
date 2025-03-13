@@ -6,9 +6,14 @@ Cypress.Commands.add('checkIfUserExistsAndDelete', (email) => {
     }) 
 })
 
-Cypress.Commands.add('getToken', (user) => {
-    cy.request('POST', 'https://serverest.dev/login', user)
-    .then((response) => {return response.body.authorization}) 
+Cypress.Commands.add('login', (user) => {
+    cy.request({
+        method: 'POST',
+        url: 'https://serverest.dev/login',
+        body: user,
+        failOnStatusCode: false
+    }).then((response) => {return response}) 
+
 })
 
 Cypress.Commands.add('deleteProduct', (id, token) => {
