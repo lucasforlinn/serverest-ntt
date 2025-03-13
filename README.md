@@ -1,8 +1,23 @@
-Projeto ServerEST-NTT
-Este projeto parece ser um framework de testes para a API ServerEST usando Cypress. Abaixo está um modelo de README abrangente para o seu repositório.
+Explicações
 
-Visão Geral do Projeto
-ServerEST-NTT é um framework de testes construído para automatizar testes de API para a aplicação ServerEST. Este projeto utiliza Cypress para testes end-to-end, fornecendo uma maneira robusta de garantir a funcionalidade e confiabilidade da API.
+- Utilizei custom commands por ser o padrão na documentação do cypress
+- Como é um projeto pequeno deixei os testes de API e front aqui no mesmo projeto
+
+
+Índice
+Instalação
+
+Uso
+
+Funcionalidades
+
+Estrutura do Projeto
+
+Executando Testes
+
+Contribuindo
+
+Licença
 
 Instalação
 Para começar com este projeto, siga estes passos:
@@ -16,19 +31,26 @@ cd serverest-ntt
 
 # Instale as dependências
 npm install
-
 Uso
 Este projeto permite executar testes automatizados contra a API ServerEST. Para executar os testes:
 
-
+bash
 # Execute os testes Cypress em modo headless
-npx cypress run
+npm test
 
 # Abra o Test Runner do Cypress
-npx cypress open
+npm run cypress:open
+Funcionalidades
+Testes de API automatizados usando Cypress
+
+Scripts de teste baseados em JavaScript
+
+Ambientes de teste configuráveis
+
+Cobertura de testes abrangente para endpoints do ServerEST
 
 Estrutura do Projeto
-
+text
 serverest-ntt/
 ├── cypress/
 │   ├── e2e/           # Arquivos de teste
