@@ -1,28 +1,15 @@
+## Visão Geral do Projeto
+
 Explicações
 
-- Utilizei custom commands por ser o padrão na documentação do cypress
-- Como é um projeto pequeno deixei os testes de API e front aqui no mesmo projeto
+Utilizei custom commands por ser o padrão na documentação do cypress
+Como é um projeto pequeno deixei os testes de API e front aqui no mesmo projeto
 
+## Instalação
 
-Índice
-Instalação
-
-Uso
-
-Funcionalidades
-
-Estrutura do Projeto
-
-Executando Testes
-
-Contribuindo
-
-Licença
-
-Instalação
 Para começar com este projeto, siga estes passos:
 
-bash
+```bash
 # Clone o repositório
 git clone https://github.com/lucasforlinn/serverest-ntt.git
 
@@ -31,26 +18,23 @@ cd serverest-ntt
 
 # Instale as dependências
 npm install
-Uso
+```
+
+## Uso
+
 Este projeto permite executar testes automatizados contra a API ServerEST. Para executar os testes:
 
-bash
+```bash
 # Execute os testes Cypress em modo headless
-npm test
+npx cypress run
 
 # Abra o Test Runner do Cypress
-npm run cypress:open
-Funcionalidades
-Testes de API automatizados usando Cypress
+npx cypress open
+```
 
-Scripts de teste baseados em JavaScript
+## Estrutura do Projeto
 
-Ambientes de teste configuráveis
-
-Cobertura de testes abrangente para endpoints do ServerEST
-
-Estrutura do Projeto
-text
+```
 serverest-ntt/
 ├── cypress/
 │   ├── e2e/           # Arquivos de teste
@@ -61,3 +45,4 @@ serverest-ntt/
 ├── package.json       # Dependências e scripts do projeto
 ├── package-lock.json  # Arquivo de lock de dependências
 └── README.md          # Documentação do projeto
+```
