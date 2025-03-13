@@ -26,7 +26,7 @@ describe('API Testing', () => {
             "quantidade": 381
         }
 
-        cy.login(user).then(response => {
+        cy.loginAPI(user).then(response => {
             cy.request({
                 method: 'POST',
                 url: 'https://serverest.dev/produtos',
@@ -48,7 +48,7 @@ describe('API Testing', () => {
             "password": "222111",
         }
 
-        cy.login(user).then(response => {
+        cy.loginAPI(user).then(response => {
             expect(response.status).to.eq(401)
             expect(response.body.message).to.eq('Email e/ou senha inválidos')
         })

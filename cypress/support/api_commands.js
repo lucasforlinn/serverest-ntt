@@ -6,7 +6,7 @@ Cypress.Commands.add('checkIfUserExistsAndDelete', (email) => {
     }) 
 })
 
-Cypress.Commands.add('login', (user) => {
+Cypress.Commands.add('loginAPI', (user) => {
     cy.request({
         method: 'POST',
         url: 'https://serverest.dev/login',
