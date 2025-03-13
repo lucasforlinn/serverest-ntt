@@ -1,4 +1,4 @@
-describe('template spec', () => {
+describe('Front End Testing', () => {
   it('Unsuccessful login', () => {
     cy.visit('/login')
 
