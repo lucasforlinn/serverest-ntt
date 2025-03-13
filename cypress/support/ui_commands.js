@@ -30,13 +30,6 @@ Cypress.Commands.add('searchProduct', (product) => {
     cy.get('[data-testid="adicionarNaLista"]').first().click()
 })
 
-Cypress.Commands.add('checkIfUserExistsAndDelete', (email) => {
-    cy.request('GET', `https://serverest.dev/usuarios?email=${email}`).then((response) => {
-        if (response.body.quantidade > 0) {
-          cy.request('DELETE', `https://serverest.dev/usuarios/${response.body.usuarios[0]._id}`)
-        }
-    }) 
-})
 //
 //
 // -- This is a child command --
